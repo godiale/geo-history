@@ -10,13 +10,13 @@ def coordinates(location):
 
 def icon(row):
     color = 'red' if 'Orber Str. 16' in row['Address'] \
-        else 'green' if pd.notna(row['Applied']) \
+        else 'orange' if pd.notna(row['Applied']) \
         else 'blue'
     return folium.Icon(color=color)
 
 
 def main():
-    geolocator = RateLimiter(geopy.Nominatim(user_agent="myGeocoder").geocode, min_delay_seconds=1)
+    geolocator = RateLimiter(geopy.Nominatim(user_agent="myGeocoder").geocode, min_delay_seconds=1.0)
     berlin = geolocator("Berlin Germany")
 
     df = pd.read_excel(io='input/Berlin.xlsx')
