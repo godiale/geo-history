@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 # output
-output
+output/
+
+# nominatim caches
+cache/
